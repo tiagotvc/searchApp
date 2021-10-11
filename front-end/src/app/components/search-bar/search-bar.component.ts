@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AddressService } from '../../services/address/address.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent{
 
-  sendData(event: any){
-    console.log(event.target.value);
-  }
+  constructor(private addressService: AddressService){}
 
+  sendData(event: any){
+    let query:string = event.target.value;
+    this.addressService.searchAddress(query.trim()).subscribe(results => {
+      console.log(results);
+    })
+  }
 }

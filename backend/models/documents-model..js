@@ -14,9 +14,9 @@
      
  const documents = new Schema(
      {
-         documents: { type: Object, required: true }
+         address: { type: String, required: false}
      },
      { timestamps: true },
  )
      
- module.exports = mongoose.model('address', documents)
+ module.exports = mongoose.model('documents', documents)

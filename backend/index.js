@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require('cors');
-//const addressRouter = require('./routes/product-router');
+const addressRouter = require('./routes/address-route');
 const db = require('./db');
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-//app.use('/api', addressRouter);
+app.use('/api', addressRouter);
 
 
 const port = process.env.PORT || 3001;

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 export interface Address {
   _id: string,
-  name: string
+  address: string
 }
 
 @Injectable({
@@ -12,4 +13,12 @@ export interface Address {
 export class AddressService {
 
   constructor(private http:HttpClient) { }
+
+  searchAddress(query: string){
+    return this.http.post<{payload: string}>('/api/getAddressByName', {payload: query}, {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    }).pipe(
+      map(data => data.payload)
+    );
+  }
 }
