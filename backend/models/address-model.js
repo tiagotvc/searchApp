@@ -12,12 +12,11 @@
  const mongoose = require('mongoose');
  const Schema = mongoose.Schema;
      
- const Product = new Schema(
+ const documents = new Schema(
      {
-         _id: { type: Number, required: true},
-         stringDocument: { type: Object, required: true }
+         documents: { type: Object, required: true }
      },
      { timestamps: true },
  )
      
- module.exports = mongoose.model('products', Product)
+ module.exports = mongoose.model('address', documents)
