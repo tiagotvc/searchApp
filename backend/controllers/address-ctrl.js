@@ -27,26 +27,24 @@
         campos */
      
 
-        getAllDocuments = async (req, res) => {
+getAllDocuments = async (req, res) => {
 
-            const docs = await documents.findOne();
+            let {payload} = req.query;
+
+            console.log(payload);
+            let search = await documents.find({address: {$regex: new RegExp('^'+payload+'.*',
+            'i')}}).exec()
+
+            console.log(search)
             
-            res.json({name:docs})
-
             
-            /* await documents.find({}, (err, documentss) => {
-                if (err) {
-                    return res.status(400).json({ success: false, error: err })
-                }
-                if (!documentss.length) {
 
-                    return res
-                        .status(404)
-                        .json({ success: false, error: `Moeda não encontrada` })
-                }
-                return res.status(200).json({ success: true, data: documentss })
-            }).catch(err => console.log(err)) */
+            // Limit search results to 10
+            //search = search.slice(0,10);
+            res.send({payload: search});
+
         }
+
      module.exports = {
         getAllDocuments,  
      }

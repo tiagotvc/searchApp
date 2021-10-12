@@ -12,13 +12,21 @@ export interface Address {
 })
 export class AddressService {
 
+  url = 'http://localhost:3001/api/getAddressByName/';
+
   constructor(private http:HttpClient) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
+
   searchAddress(query: string){
-    return this.http.post<{payload: string}>('/api/getAddressByName', {payload: query}, {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
-    }).pipe(
-      map(data => data.payload)
-    );
+
+      return this.http.get<{payload: Array<Address>}>(`${this.url}?payload=${query}`, {
+        headers: new HttpHeaders({'Content-Type': 'application/json'})
+      }).pipe(
+        map(data => data.payload)
+      );
   }
 }
+

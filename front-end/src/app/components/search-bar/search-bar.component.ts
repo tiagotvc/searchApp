@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddressService } from '../../services/address/address.service';
+import { AddressService , Address } from '../../services/address/address.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,12 +8,27 @@ import { AddressService } from '../../services/address/address.service';
 })
 export class SearchBarComponent{
 
+  address:Array<Address> = [];
+
   constructor(private addressService: AddressService){}
 
   sendData(event: any){
     let query:string = event.target.value;
-    this.addressService.searchAddress(query.trim()).subscribe(results => {
-      console.log(results);
-    })
+    let matchSpaces: any = query.match(/\s*/);
+
+    if(matchSpaces[0] == query){
+      this.address = [];
+      return;
+    }
+    
+    if(query.length >= 3){
+
+      this.addressService.searchAddress(query.trim()).subscribe(results => {
+        this.address = results;
+        console.log(results);
+      })
+
+    }
+    
   }
 }
