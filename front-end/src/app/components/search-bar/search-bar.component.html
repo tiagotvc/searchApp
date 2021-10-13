@@ -1,9 +1,9 @@
 <div class="container">
     <input type="text"  #searchBar  name="search-box" class="search-box">
-    <button class="btn-do" (click)="sendData(searchBar.value)">Buscar</button>
+    <button class="btn-do" (click)="getAllData(searchBar.value)">Buscar</button>
 </div>
 <div class="alert" *ngIf="alert">
-    <p>Precisa fornecer ao menos três letras para a busca!!!</p>
+    <p>{{alertMessage}}</p>
     <button (click)="closeAlert()">x</button>
 </div>
 

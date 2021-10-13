@@ -1,6 +1,5 @@
 <section class="search-results" >
     <h1>{{address.length > 0? address.length + "  Resultados encontrados" : ""}} </h1>
-    <h2>{{count? count: ""}} </h2>
     <ul class="responsive-table" *ngFor= "let address of address">
         <li class="table-row">{{address.address}}</li>
     </ul>

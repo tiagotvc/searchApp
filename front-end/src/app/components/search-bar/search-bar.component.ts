@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SharedDataService } from 'src/app/shared-data.service';
+import { SharedDataService } from 'src/app/services/sharedDataService/shared-data.service';
 import { AddressService , Address } from '../../services/address/address.service';
 
 @Component({
@@ -12,7 +12,12 @@ export class SearchBarComponent  {
 
   address:Array<Address> = [];
   alert: boolean = false;
+  alertMessage: string = '';
   count : string = '';
+  totalPages : number = 0;
+  limit: number = 10;
+ 
+
   
 
   constructor(
@@ -20,32 +25,33 @@ export class SearchBarComponent  {
     private sharedData: SharedDataService
     ){}
 
-  sendData(value: any){
-    let query:string = value;
-    let matchSpaces: any = query.match(/\s*/);
+  setLimit(){
 
-    if(matchSpaces[0] == query){
-      this.address = [];
+    this.sharedData.loadLimit(this.limit);
+  }
+
+  getAllData(value: any){
+    let query:string = value;
+    let page:number = 1;
+    let limit:number = 10;
+
+    if(query !== query.trim()){
+      this.alertMessage = "Favor remova os espaços"
+      this.alert = true;
       return;
     }
-    
+
     if(query.length >= 3){
-      this.alert = false;
-      this.addressService.searchAddress(query.trim()).subscribe(results => {
-        this.address = results.payload;
-        this.count = results.count;
-        this.sharedData.loadAddress(results.payload);
-        this.sharedData.loadCount(results.count);
-        console.log(results);
-      })
-    }else {
+      this.addressService.search(query.trim(),page,limit);
+    }
+    else {
+      this.alertMessage = "Preciso no minimo três letras para realizar a buca"
       this.alert = true;
-      this.sharedData.loadAddress([]);
     }
   }
 
   closeAlert() {
-    this.alert= false;
+    this.alert = false;
   }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SharedDataService } from 'src/app/shared-data.service';
+import { SharedDataService } from 'src/app/services/sharedDataService/shared-data.service';
 import  {Address, AddressService} from '../../../services/address/address.service';
 
 
