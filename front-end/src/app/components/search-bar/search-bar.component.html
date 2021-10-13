@@ -1,5 +1,10 @@
-<input type="text" name="search-box" class="search-box" (keyup)="sendData($event)">
-<section class="search-results">
-    <p>para</p>
+<div class="container">
+    <input type="text"  #searchBar  name="search-box" class="search-box">
+    <button class="btn-do" (click)="sendData(searchBar.value)">Buscar</button>
+</div>
+<div class="alert" *ngIf="alert">
+    <p>Precisa fornecer ao menos três letras para a busca!!!</p>
+    <button (click)="closeAlert()">x</button>
+</div>
 
-</section>
+

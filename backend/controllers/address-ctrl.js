@@ -30,18 +30,21 @@
 getAllDocuments = async (req, res) => {
 
             let {payload} = req.query;
-
-            console.log(payload);
-            let search = await documents.find({address: {$regex: new RegExp('^'+payload+'.*',
-            'i')}}).exec()
-
-            console.log(search)
+            let limit = 10;
+            let page = 1;
+            let news = new RegExp('/.*'+payload+'$/g');
+            console.log(news);
             
-            
+            let search = await documents.find({address: {$regex: new RegExp(`${payload}`, 'g')}})
+                .limit(limit *1)
+                .skip((page -1) * limit)
+                .exec()
 
-            // Limit search results to 10
-            //search = search.slice(0,10);
-            res.send({payload: search});
+            let counter = await documents.find({address: {$regex: new RegExp(`${payload}`, 'g')}})
+                .count()
+                .exec()
+                
+            res.send({payload: search, count:counter});
 
         }
 

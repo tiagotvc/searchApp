@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SharedDataService } from 'src/app/shared-data.service';
 import { AddressService , Address } from '../../services/address/address.service';
 
 @Component({
@@ -6,14 +8,20 @@ import { AddressService , Address } from '../../services/address/address.service
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent{
+export class SearchBarComponent  {
 
   address:Array<Address> = [];
+  alert: boolean = false;
+  count : string = '';
+  
 
-  constructor(private addressService: AddressService){}
+  constructor(
+    private addressService: AddressService,
+    private sharedData: SharedDataService
+    ){}
 
-  sendData(event: any){
-    let query:string = event.target.value;
+  sendData(value: any){
+    let query:string = value;
     let matchSpaces: any = query.match(/\s*/);
 
     if(matchSpaces[0] == query){
@@ -22,13 +30,25 @@ export class SearchBarComponent{
     }
     
     if(query.length >= 3){
-
+      this.alert = false;
       this.addressService.searchAddress(query.trim()).subscribe(results => {
-        this.address = results;
+        this.address = results.payload;
+        this.count = results.count;
+        this.sharedData.loadAddress(results.payload);
+        this.sharedData.loadCount(results.count);
         console.log(results);
       })
-
+    }else {
+      this.alert = true;
+      this.sharedData.loadAddress([]);
     }
-    
   }
+
+  closeAlert() {
+    this.alert= false;
+  }
+
+
+ 
+  
 }

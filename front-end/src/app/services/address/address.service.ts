@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
+
 export interface Address {
-  _id: string,
-  address: string
+  _id: string;
+  address: string;
 }
 
 @Injectable({
@@ -12,21 +13,23 @@ export interface Address {
 })
 export class AddressService {
 
-  url = 'http://localhost:3001/api/getAddressByName/';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {}
+
+
+  url = 'http://localhost:3001/api/getAddressByName/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
   searchAddress(query: string){
-
-      return this.http.get<{payload: Array<Address>}>(`${this.url}?payload=${query}`, {
+      return this.http.get<{payload: Array<Address>, count: string}>(`${this.url}?payload=${query}`, {
         headers: new HttpHeaders({'Content-Type': 'application/json'})
       }).pipe(
-        map(data => data.payload)
+        map(data => data)
       );
   }
+
 }
 
