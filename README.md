@@ -103,6 +103,7 @@
 ## Check-list Requerimentos do Desafio:
 
 ```
+    - Tempo necessário para montar o projeto: Em torno de 15 horas corridas;
     - Criar uma aplicação web em AngularJS : Criado;
 ```
 ```
