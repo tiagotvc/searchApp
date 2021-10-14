@@ -25,11 +25,16 @@ export class PaginationComponent implements OnInit {
 
   limitPerPage: number = 0;
 
+  startIndex: number = 0;
+  endIndex: number = 0;
+
 
 
   constructor(
     private sharedData : SharedDataService,
     private addressService: AddressService) { }
+
+    
 
     @Input() recordsPerPage: number = 0;
 
@@ -77,8 +82,14 @@ export class PaginationComponent implements OnInit {
       this.currentPageNumber = pager;
     })
 
+    this.sharedData.getStartIndex().subscribe(start => {
+      this.startIndex = start;
+    })
 
+    this.sharedData.getEndIndex().subscribe(end => {
+      this.endIndex = end;
+    })
 
-
+  
     }
   }

@@ -19,7 +19,6 @@ export interface Address {
 export class AddressService {
 
   address:Array<Address> = [];
-  totalPages : number = 0;
   url = 'http://localhost:3001/api/getAddressByName/';
   
   
@@ -38,6 +37,7 @@ export class AddressService {
     this.sharedData.loadString(query);
     this.sharedData.loadLimit(limit);
     this.sharedData.loadCurrentPage(page);
+    
 
     let finalUrl = `${this.url}?payload=${query}&page=${page}&limit=${limit}`
     
@@ -48,6 +48,8 @@ export class AddressService {
         this.sharedData.loadAddress(response.payload);
         this.sharedData.loadCount(response.count);
         this.sharedData.loadTotalPages(Math.ceil(parseInt(response.count)/limit));
+        this.sharedData.loadStartIndex((page - 1) * limit);
+        this.sharedData.loadEndIndex(Math.min((page - 1) * limit)+ limit - 1);
       }
     )
   } 

@@ -30,8 +30,12 @@
 getAllDocuments = async (req, res) => {
 
             let {payload} = req.query;
-            let limit = 10;
-            let page = 1;
+
+            console.log(payload,"teste")
+            console.log(req.query)
+            let {limit} = req.query;
+            let {page} = req.query;
+
             let news = new RegExp('/.*'+payload+'$/g');
             console.log(news);
             

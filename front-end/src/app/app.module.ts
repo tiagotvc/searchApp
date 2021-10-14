@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from  '@angular/common/http';
@@ -8,6 +9,9 @@ import { HomeComponent } from './layouts/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { TableComponent } from './components/table/table/table.component';
 import { PaginationComponent } from './components/pagination/pagination/pagination.component';
+import { AuthenticationComponent } from './layouts/authentication/authentication/authentication.component';
+import { LoginComponent } from './components/login/login/login.component';
+import { CreateAccountComponent } from './components/login/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +19,17 @@ import { PaginationComponent } from './components/pagination/pagination/paginati
     HomeComponent,
     SearchBarComponent,
     TableComponent,
-    PaginationComponent
+    PaginationComponent,
+    AuthenticationComponent,
+    LoginComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,6 +14,8 @@ export class SharedDataService {
   private searchedStringData = new BehaviorSubject<string>('');
   private limitData = new BehaviorSubject<number>(0);
   private currentPage = new BehaviorSubject<number>(0);
+  private startIndexData = new BehaviorSubject<number>(0);
+  private endIndexData = new BehaviorSubject<number>(0);
 
 
   constructor() { }
@@ -42,6 +44,14 @@ export class SharedDataService {
     this.currentPage.next(current);
   }
 
+  loadStartIndex(start: number){
+    this.startIndexData.next(start);
+  }
+
+  loadEndIndex(end: number){
+    this.endIndexData.next(end);
+  }
+
 
   getAddress(): Observable<Address[]>{
     return this.addressData.asObservable();
@@ -67,7 +77,12 @@ export class SharedDataService {
     return this.currentPage.asObservable();
   }
 
-  
+  getStartIndex(): Observable<number>{
+    return this.startIndexData.asObservable();
+  }
 
+  getEndIndex(): Observable<number>{
+    return this.endIndexData.asObservable();
+  }
 
 }

@@ -1,5 +1,39 @@
+.container {
+    display:flex;
+    max-width: 450px;
+    margin: 40px auto 0 auto;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.container span {
+    
+}
+
+.nav-container{
+    display:flex;
+    max-width: 350px;
+    margin: 40px auto 0 auto;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-container ul {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.nav-container ul li {
+  list-style: none;
+  margin-left: 10px;
+}
+
 
 .disabled {
     pointer-events: none;
+  
   }
   
