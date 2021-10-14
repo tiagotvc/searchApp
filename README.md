@@ -46,9 +46,9 @@
 
 ```
 
-## ENDPOINTS
+# ENDPOINTS
 
-# [Retornar endereços(get)]
+## [Retornar endereços(get)]
 
 ```
       http://localhost:3001/api/getAddressByName/
@@ -61,7 +61,7 @@
       - http://localhost:3001/api/getAddressByName/?payload="rue"&page=1&limit=100
  ```
 
-# [Login(post)]
+## [Login(post)]
 
 ```
     
@@ -79,7 +79,7 @@
   
 ```
 
-#  [Signup(post)]
+##  [Signup(post)]
 
 ```
 
