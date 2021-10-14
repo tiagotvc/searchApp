@@ -4,3 +4,9 @@ h1 {
     background-color: aliceblue;
     font-size: 3.3rem;
 }
+
+.logout {
+    display: flex;
+    max-width: 300px;
+
+}

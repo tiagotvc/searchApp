@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
-import { getLocaleDateFormat } from '@angular/common';
 import { SharedDataService } from 'src/app/services/sharedDataService/shared-data.service';
 
 

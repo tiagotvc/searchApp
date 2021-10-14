@@ -1,3 +1,12 @@
+.titulo {
+    display:flex;
+    max-width: 550px;
+    margin: 40px auto 0 auto;
+    width: 95%;
+    font-size: 30px;
+}
+
+
 .container {
     display:flex;
     max-width: 750px;
@@ -23,7 +32,7 @@
 }
 
 .alert {
-    background: tomato;
+    background:salmon;
     display: flex;
     margin: 40px auto 0 auto;
     width: 95%;
@@ -34,8 +43,29 @@
     text-align: center;
     align-items: center;
     color:white;
-
 }
 
+.btn-x {
+    margin-left: 60px;
+    width: 50px;
+    color:white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    border:1px solid white;
+    
+}
 
+.logout {
+   font-size: 12px;
+   margin: 10px 20px auto;
+   width: 50px;
+   height: 20px;
+   background: salmon;
+   color:white;
+   text-align: center;
+   cursor: pointer;
+   border:1px solid black;
+   
 
+}

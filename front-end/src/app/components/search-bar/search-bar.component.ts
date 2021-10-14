@@ -17,9 +17,6 @@ export class SearchBarComponent  {
   totalPages : number = 0;
   limit: number = 10;
  
-
-  
-
   constructor(
     private addressService: AddressService,
     private sharedData: SharedDataService
@@ -45,16 +42,17 @@ export class SearchBarComponent  {
       this.addressService.search(query.trim(),page,limit);
     }
     else {
-      this.alertMessage = "Preciso no minimo três letras para realizar a buca"
+      this.alertMessage = "Preciso no minimo três letras para realizar a buca";
       this.alert = true;
     }
+  }
+
+  async logout() {
+    window.localStorage.clear();
+    window.location.reload();
   }
 
   closeAlert() {
     this.alert = false;
   }
-
-
- 
-  
 }

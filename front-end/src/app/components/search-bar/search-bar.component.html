@@ -1,10 +1,14 @@
+<div class="titulo">
+    <span>Busca por Endereço</span>
+    <span class="logout" (click)="logout()">logout</span>
+</div>
 <div class="container">
     <input type="text"  #searchBar  name="search-box" class="search-box">
     <button class="btn-do" (click)="getAllData(searchBar.value)">Buscar</button>
 </div>
 <div class="alert" *ngIf="alert">
     <p>{{alertMessage}}</p>
-    <button (click)="closeAlert()">x</button>
+    <span class="btn-x"(click)="closeAlert()">close</span>
 </div>
 
 

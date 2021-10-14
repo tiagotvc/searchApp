@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { SharedDataService } from 'src/app/services/sharedDataService/shared-data.service';
-import  {Address, AddressService} from '../../../services/address/address.service';
+import  {Address} from '../../../services/address/address.service';
 
 
 @Component({
@@ -27,10 +26,6 @@ export class TableComponent implements OnInit {
       this.count = counter;
     })
     })
-
-   
-
-    
   }
 
 }

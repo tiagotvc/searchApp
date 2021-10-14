@@ -10,15 +10,15 @@ import { SharedDataService } from 'src/app/services/sharedDataService/shared-dat
 })
 export class PaginationComponent implements OnInit {
 
-  //total de paginas
+  
   totalPages: number = 0;
-  //pagina atual
+  
   currentPageNumber: number = 1;
-  //
+  
   totalRecordsCount: number = 0;
-  //
+  
   pager: any = {};
-  //
+  
   count: number = 0;
 
   searchedString : string = '';
@@ -26,6 +26,7 @@ export class PaginationComponent implements OnInit {
   limitPerPage: number = 0;
 
   startIndex: number = 0;
+
   endIndex: number = 0;
 
 
@@ -35,8 +36,6 @@ export class PaginationComponent implements OnInit {
     private addressService: AddressService) { }
 
     
-
-    @Input() recordsPerPage: number = 0;
 
   next() {
     this.getData(this.currentPageNumber + 1);
@@ -52,12 +51,6 @@ export class PaginationComponent implements OnInit {
     console.log(this.limitPerPage);
       this.addressService.search(this.searchedString.trim(),currentPage,this.limitPerPage);
     }
-
-
-  trackByFn(index: any, item: any) {
-    return item; // or item.id
-  }
-
 
 
   ngOnInit(){
