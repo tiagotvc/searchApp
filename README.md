@@ -4,7 +4,7 @@
 ## Iniciando o projeto
 
 ```
-   [##Api de Account]
+   ##Api de Account
 
    - cd account-api;
    - npm install;
