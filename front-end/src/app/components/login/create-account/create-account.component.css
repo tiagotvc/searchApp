@@ -68,7 +68,7 @@
   .pass:hover{
     text-decoration: underline;
   }
-  input[type="submit"]{
+  .btn-confirm{
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -80,7 +80,7 @@
     cursor: pointer;
     outline: none;
   }
-  input[type="submit"]:hover{
+  .btn-confirm:hover{
     border-color: #2691d9;
     transition: .5s;
   }
@@ -97,3 +97,8 @@
   .signup_link a:hover{
     text-decoration: underline;
   }
+
+  .text-danger {
+    color:red;
+    font-size: 10px;
+}

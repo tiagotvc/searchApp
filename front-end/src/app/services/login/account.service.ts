@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,18 +6,36 @@ import { Injectable } from '@angular/core';
 })
 export class AccountService {
 
-  constructor() { }
+  url: String = 'http://localhost:3003/api/';
 
-  login(user: any) {
-    return new Promise((resolve) => {
-      window.localStorage.setItem('token', 'meu-token');
-      resolve(true);
-    });
+  constructor(
+    private http:HttpClient
+  ) { }
+
+  async login(user: any) {
+
+    const {email, password} = user;
+
+    
+    const result = await this.http.post<any>(`${this.url}login`, {email:email, password:password}).toPromise();
+
+    if(result && result.auth){
+      window.localStorage.setItem('token',result.token);
+      return result;
+    }
+  
+      return result;
+
+    
   }
 
-  createAccount(account: any) {
-    return new Promise((resolve) => {
-      resolve(true);
-    });
+  async createAccount(account: any) {
+
+    const {email, password, keyword} = account;
+
+    const result = await this.http.post<any>(`${this.url}signup`, {email:email, password:password, keyword:keyword}).toPromise();
+
+    return result;
+    
   }
 }

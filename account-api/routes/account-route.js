@@ -4,16 +4,17 @@
  * 
  * Seta as rotas da API.
  * 
- * Data de criação:2021/08/15
+ * Data de criação:2021/10/14
  * 
  * Criador: Tiago Machado Carvalho
  * 
  */
 
  const express = require('express');
- const AddressCtrl = require('../controllers/address-ctrl');
+ const AccountCtrl = require('../controllers/account-ctrl');
  const router = express.Router();
      
- router.get('/getAddressByName', AddressCtrl.getAllDocuments)
+ router.post('/login', AccountCtrl.login);
+ router.post('/signup', AccountCtrl.signup);
      
  module.exports = router

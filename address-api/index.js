@@ -4,7 +4,6 @@ const addressRouter = require('./routes/address-route');
 const db = require('./db');
 const app = express();
 
-
 app.use(cors());
 
 app.options('*', cors());

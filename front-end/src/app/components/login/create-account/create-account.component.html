@@ -1,24 +1,24 @@
 <div class="center">
     <h1>Criar Conta</h1>
-    <form method="post">
+    <form (ngSubmit)="onSubmit()" #form="ngForm" method="post" [formGroup]="loginForm">
       <div class="txt_field">
-        <input type="text" required>
-        <span></span>
+        <input type="text" name="email" id="email" formControlName="email" [(ngModel)]="account.email" required>
         <label>Email</label>
+        <span class="text-danger" *ngIf="loginForm.controls['email'].touched && loginForm.hasError('required','email')">*Email é requerido</span>
       </div>
       <div class="txt_field">
-        <input type="password" required>
-        <span></span>
+        <input type="password" name="password" id="password" formControlName="password"[(ngModel)]="account.password" required>
         <label>Senha</label>
+        <span class="text-danger" *ngIf="loginForm.controls['password'].touched && loginForm.hasError('required','password')">*Senha é requerida</span>
       </div>
        <div class="txt_field">
-        <input type="text" required>
-        <span></span>
+        <input type="text" name="keyword" id="keyword" formControlName="keyword" [(ngModel)]="account.keyword" required>
         <label>Palavra-chave</label>
+        <span class="text-danger" *ngIf="loginForm.controls['keyword'].touched && loginForm.hasError('required','keyword')">*Palavra-chave é requerida</span>
       </div>
-      <input type="submit" value="Entrar">
+      <button type="submit" class="btn-confirm" [disabled]="!loginForm.valid">Criar</button>
       <div class="signup_link">
-        Não possui conta? <a href="#">Criar conta</a>
+        Já Possui conta? <a [routerLink]="['/login']" >Entre</a>
       </div>
     </form>
   </div>

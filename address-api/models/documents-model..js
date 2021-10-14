@@ -1,7 +1,7 @@
 /**
  * Arquivo de modelo de Endereço 
  * 
- * Determina as propriedades do modelo Endereço.
+ * Determina as propriedades do modelo documents.
  * 
  * Data de criação:2021/10/11
  * 

@@ -31,6 +31,8 @@
     background: none;
     outline: none;
   }
+
+  
   .txt_field label{
     position: absolute;
     top: 50%;
@@ -41,6 +43,11 @@
     pointer-events: none;
     transition: .5s;
   }
+
+  input .ng-valid {
+      border-left: 5px solid green;
+  }
+
   .txt_field span::before{
     content: '';
     position: absolute;
@@ -96,4 +103,9 @@
   }
   .signup_link a:hover{
     text-decoration: underline;
+  }
+
+  .text-danger {
+      color:red;
+      font-size: 10px;
   }

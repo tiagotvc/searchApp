@@ -11,6 +11,11 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  async logout() {
+    window.localStorage.clear();
+    window.location.reload();
+  }
+
   ngOnInit(): void {
   }
 
