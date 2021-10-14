@@ -146,6 +146,7 @@
      - Testes unitários de components e de apis;
      - adicionar numeros das páginas a paginação;
      - Select para o usuario escolher o numero de itens por pagina;
+     - implementar recuperação de senha usando a palavra-chave;
  ```
 
 
