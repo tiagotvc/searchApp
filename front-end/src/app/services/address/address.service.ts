@@ -41,7 +41,6 @@ export class AddressService {
     
     this.http.get(finalUrl).subscribe(
       (response: any) => {
-        console.log(response)
         this.address = response.payload;
         this.sharedData.loadAddress(response.payload);
         this.sharedData.loadCount(response.count);
@@ -51,6 +50,5 @@ export class AddressService {
       }
     )
   } 
-
 }
 

@@ -84,5 +84,4 @@ export class SharedDataService {
   getEndIndex(): Observable<number>{
     return this.endIndexData.asObservable();
   }
-
 }
