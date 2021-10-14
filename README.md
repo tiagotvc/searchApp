@@ -137,6 +137,16 @@
      - Validações;
  ```
 
+ ## O que gostaria de ter feito com mais tempo?
+
+ ```
+     - Adicionar spinner de loading;
+     - Melhorar o layout (mais bonito, animações);
+     - Documentação Swagger;
+     - Testes unitários de components e de apis;
+     - adicionar numeros das páginas a paginação;
+ ```
+
 
 
 
