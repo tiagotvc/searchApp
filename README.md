@@ -46,12 +46,11 @@
 
 ```
 
-##ENDPOINTS
+## ENDPOINTS
+
+# [Retornar endereços(get)]
 
 ```
-
-     [Retornar endereços(get)]
-
       http://localhost:3001/api/getAddressByName/
 
     - Precisa passar como query 
@@ -60,12 +59,12 @@
       - limit : máximo de itens por página;
     - Exemplo:
       - http://localhost:3001/api/getAddressByName/?payload="rue"&page=1&limit=100
-      
  ```
 
-```
-    [Login(post)]
+# [Login(post)]
 
+```
+    
     http://localhost:3001/api/login
 
     - Precisa passar no body os parametros:
@@ -80,10 +79,9 @@
   
 ```
 
+#  [Signup(post)]
 
 ```
-
-    [Signup(post)]
 
     http://localhost:3001/api/signup
 
