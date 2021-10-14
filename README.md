@@ -4,19 +4,20 @@
 ## Iniciando o projeto
 
 ```
-   ##Api de Account
+   [API DE ACCOUNT]
 
    - cd account-api;
    - npm install;
    
-   [Api de address]
+   [API DE ADDRESS]
 
    - cd address-api;
    - npm install;
    - node index.js;
 
    
-   [Iniciando o container]
+   [INICIANDO CONTAINER]
+   
    - Estar na raiz, local onde esta o arquivo docker-compose.yml;
    - docker estar rodando;
    - Precisa ser nessa exata sequência:
@@ -24,7 +25,8 @@
    - docker-compose up --build account-api;
    - caso de algum erro em um dos container execute novamente o comando.
 
-   [Scrip]
+   [SCRIPT]
+   
    - Criei um script de inserção de usuarios, não é obrigatório usar.
    - Na pasta raiz abra um novo terminal e digite o comando:
    - docker-compose run account-api npm run mongo
@@ -36,12 +38,13 @@
     "email":"user4@gmail.com", "password":"123456"
 
 
-    [Front-end]
+    [FRONT-END]
+    
     - cd front-end
     - ng serve
     - Será aberto na url http://localhost:4200
 
-    [EndPoints]
+    [ENDPOINTS]
 
      [Retornar endereços(get)]
 
