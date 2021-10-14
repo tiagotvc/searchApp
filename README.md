@@ -44,7 +44,11 @@
     - ng serve
     - Será aberto na url http://localhost:4200
 
-    [ENDPOINTS]
+```
+
+##ENDPOINTS
+
+```
 
      [Retornar endereços(get)]
 
@@ -56,8 +60,10 @@
       - limit : máximo de itens por página;
     - Exemplo:
       - http://localhost:3001/api/getAddressByName/?payload="rue"&page=1&limit=100
+      
+ ```
 
-
+```
     [Login(post)]
 
     http://localhost:3001/api/login
@@ -71,7 +77,11 @@
         "email":"usernew@gmail.com",
         "password":"123456"
     }
+  
+```
 
+
+```
 
     [Signup(post)]
 
