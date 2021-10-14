@@ -47,8 +47,7 @@ export class PaginationComponent implements OnInit {
 
 
   getData(currentPage: number){
-    console.log(currentPage)
-    console.log(this.limitPerPage);
+    
       this.addressService.search(this.searchedString.trim(),currentPage,this.limitPerPage);
     }
 
