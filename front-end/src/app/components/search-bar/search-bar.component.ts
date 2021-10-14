@@ -42,7 +42,7 @@ export class SearchBarComponent  {
       this.addressService.search(query.trim(),page,limit);
     }
     else {
-      this.alertMessage = "Preciso no minimo três letras para realizar a buca";
+      this.alertMessage = "Preciso no minimo três letras para realizar a busca";
       this.alert = true;
     }
   }

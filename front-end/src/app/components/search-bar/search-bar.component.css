@@ -47,7 +47,7 @@
 
 .btn-x {
     margin-left: 60px;
-    width: 50px;
+    width: 60px;
     color:white;
     cursor: pointer;
     font-weight: bold;
@@ -69,3 +69,17 @@
    
 
 }
+
+@media only screen and (max-width: 700px) {
+
+    .btn-x {
+        font-size: 12px;
+        margin: 10px 10px auto;
+    }
+
+    .alert {
+        font-size: 12px;
+    }
+    
+  }
+  
