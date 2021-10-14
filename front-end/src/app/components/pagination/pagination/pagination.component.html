@@ -7,13 +7,13 @@
 <nav class="nav-container"> 
   <ul>
     <li [ngClass]="{ disabled: currentPageNumber === 1}" class="page-item">
-      <button href="javascript:;" class="page-link" (click)="prev()">Previous</button>
+      <button href="javascript:;" class="page-link" (click)="prev()">Anterior</button>
     </li>
         <li
           [ngClass]="{ disabled: currentPageNumber + 1 > totalPages }"
           class="page-item"
         >
-          <button class="page-link" href="javascript:;" (click)="next()">Next</button>
+          <button class="page-link" href="javascript:;" (click)="next()">Próximo</button>
         </li>
   </ul>
 </nav>
