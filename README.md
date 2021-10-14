@@ -1,30 +1,5 @@
 # Desafio SearchApp
 
-    Check-lis Requerimentos do Desafio:
-
-```
-    - Criar uma aplicação web em AngularJS : Criado;
-    - Uma API em nodeJS: Criado uma APi para cada serviço, api de Addres e de Account;
-      - A Api de Account possui um Banco no Mongo e ambos rodam em um container Docker;
-    - É necessário login para acessar a página (email + password): Criado;
-    - Para realizar a busca tem que ter pelo menos 3 caracteres no campo texto: Validação criada;
-    - Não é necessário um design muito sofisticado, mas a tela tem que ser responsive : Está responsivo;
-    - Você tem liberdade para entregar algo mais completo em termos de validações e UX.
-        - Na questão de UX mantive simples por conta do tempo
-        - Criado validação de campos em branco;
-        - Validação de campos nos formulários de login;
-        - Validação se o usuário já existente no banco, senha incorreta, usuário inexistente;
-    
-    Extras :
-     - Sistema de paginação a nível de servidor (na api);
-       - No front bem simples, apenas botões próximo e Anterior;
-     - Informativo de paginação (ex: mostrando 0 a 10 de 100);
-     - Botão deslogar; 
-     - Api de Account + banco  mongo rodando em docker;
-     - Validações;
-
-
-```
 
 ## Iniciando o projeto
 
@@ -112,4 +87,30 @@
     }
     
     
+```
+
+## Check-list Requerimentos do Desafio:
+
+```
+    - Criar uma aplicação web em AngularJS : Criado;
+    - Uma API em nodeJS: Criado uma APi para cada serviço, api de Addres e de Account;
+      - A Api de Account possui um Banco no Mongo e ambos rodam em um container Docker;
+    - É necessário login para acessar a página (email + password): Criado;
+    - Para realizar a busca tem que ter pelo menos 3 caracteres no campo texto: Validação criada;
+    - Não é necessário um design muito sofisticado, mas a tela tem que ser responsive : Está responsivo;
+    - Você tem liberdade para entregar algo mais completo em termos de validações e UX.
+        - Na questão de UX mantive simples por conta do tempo
+        - Criado validação de campos em branco;
+        - Validação de campos nos formulários de login;
+        - Validação se o usuário já existente no banco, senha incorreta, usuário inexistente;
+    
+    Extras :
+     - Sistema de paginação a nível de servidor (na api);
+       - No front bem simples, apenas botões próximo e Anterior;
+     - Informativo de paginação (ex: mostrando 0 a 10 de 100);
+     - Botão deslogar; 
+     - Api de Account + banco  mongo rodando em docker;
+     - Validações;
+
+
 ```
